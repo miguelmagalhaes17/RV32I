@@ -36,7 +36,10 @@ module tb_rv32;
         #10 d = 1;
         #20;
 
-        $display("Simulation finished.");
+    end
+
+    initial begin
+        #1000 $display("Simulation finished.");
         $finish;
     end
 endmodule
