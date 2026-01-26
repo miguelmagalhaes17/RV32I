@@ -1,12 +1,12 @@
 module decoder #(
     parameter WIDTH = 32
 )(
-    logic [WIDTH-1:0]  i_instruction,
-    logic [6:0]        o_opcode,
-    logic [11:7]       o_rd,
-    logic [14:12]      o_funct3,
-    logic [19:15]      o_rs1,
-    logic [WIDTH-1:20] o_immediate
+    input logic [WIDTH-1:0]  i_instruction,
+    output logic [6:0]        o_opcode,
+    output logic [11:7]       o_rd,
+    output logic [14:12]      o_funct3,
+    output logic [19:15]      o_rs1,
+    output logic [WIDTH-1:20] o_immediate
 );
 
 always_comb begin
