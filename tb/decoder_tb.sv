@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module tb;
+module tb_decoder;
 
     logic [31:0]  i_instruction;
     logic [6:0]   o_opcode;
