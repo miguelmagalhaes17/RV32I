@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module tb_decoder;
+module decoder_tb;
 
     logic [31:0]  i_instruction;
     logic [6:0]   o_opcode;
@@ -54,7 +54,7 @@ end
 initial begin
     // Setup for Waveform dumping
     $dumpfile("out/waveform.vcd");
-    $dumpvars(0, tb_register_file);
+    $dumpvars(0, decoder_tb);
 end
 
 initial begin

@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module tb_register_file;
+module register_file_tb;
     logic                  clk;
     logic                  rst;
     logic                  i_we;
@@ -62,7 +62,7 @@ module tb_register_file;
     initial begin
         // Setup for Waveform dumping
         $dumpfile("out/waveform.vcd");
-        $dumpvars(0, tb_register_file);
+        $dumpvars(0, register_file_tb);
     end
 
     initial begin
