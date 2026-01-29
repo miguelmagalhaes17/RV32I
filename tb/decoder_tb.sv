@@ -47,7 +47,6 @@ initial begin
     check_expected_values(32'h00108093, 7'b0010011, 5'b00001, 3'b000, 5'b00001, 12'b000000000001);
     check_expected_values(32'hFFFF8113, 7'b0010011, 5'b00010, 3'b000, 5'b11111, 12'b111111111111);
     $display("All tests passed.");
-    $finish;
 
 end
 

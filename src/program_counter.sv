@@ -2,7 +2,7 @@ module program_counter #(
     parameter WIDTH = 32
 )(
     input  logic              clk,    // Clock signal
-    input  logic              rst,  // Active-low synchronous reset
+    input  logic              rst,    // Active-low synchronous reset
     input  logic              i_en,   // Enable (increment)
     output logic  [WIDTH-1:0] o_pc    // Current Program Counter value
 );
@@ -13,8 +13,8 @@ module program_counter #(
             o_pc <= {WIDTH{1'b0}};
         end 
         else if (i_en) begin
-            // Normal operation: Increment by 4 (byte addressable)
-            o_pc <= o_pc + 4;
+            // Normal operation: Increment by 1
+            o_pc <= o_pc + 1;
         end
     end
 endmodule
