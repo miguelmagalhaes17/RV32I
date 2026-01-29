@@ -1,10 +1,10 @@
 `include "alu_opcodes.svh"
 
 module alu #(parameter WIDTH = 32)(
-    input logic  [3:0]        i_alu_op;
-    input logic  [WIDTH-1:0]  i_a;
-    input logic  [WIDTH-1:0]  i_b;
-    output logic [WIDTH-1:0]  o_result; 
+    input logic  [3:0]        i_alu_op,
+    input logic  [WIDTH-1:0]  i_a,
+    input logic  [WIDTH-1:0]  i_b,
+    output logic [WIDTH-1:0]  o_result
 );
 
 always_comb begin
