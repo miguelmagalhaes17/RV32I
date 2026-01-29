@@ -5,7 +5,7 @@ module register_file_tb;
     logic                   rst;
     logic                   i_we;         // Write Enable
     logic [ADDR_WIDTH-1:0]  i_wr_address; // Write Address
-    logic [ADDR_WIDTH-1:0]  i_wr_data;    // Write Data
+    logic [DATA_WIDTH-1:0]  i_wr_data;    // Write Data
     
     logic [ADDR_WIDTH-1:0]  i_rd_addr_1;  // Read Address 1
     logic [DATA_WIDTH-1:0]  o_rd_data_1;  // Read Data    1
@@ -75,8 +75,8 @@ module register_file_tb;
 
     initial begin
         // Setup for Waveform dumping
-        $dumpvars(0, register_file_tb);
         $dumpfile("out/waveform.vcd");
+        $dumpvars(0, register_file_tb);
     end
 
     initial begin

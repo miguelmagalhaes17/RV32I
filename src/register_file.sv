@@ -9,7 +9,7 @@ module register_file #(
     // Write
     input  logic                   i_we,         // Write Enable
     input  logic [ADDR_WIDTH-1:0]  i_wr_address, // Write Address
-    input  logic [ADDR_WIDTH-1:0]  i_wr_data,    // Write Data
+    input  logic [DATA_WIDTH-1:0]  i_wr_data,    // Write Data
     // Read
     input  logic [ADDR_WIDTH-1:0]  i_rd_addr_1,  // Read Address 1
     output logic [DATA_WIDTH-1:0]  o_rd_data_1,  // Read Data    1

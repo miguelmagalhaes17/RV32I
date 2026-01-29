@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module program_counter #(
     parameter WIDTH = 32
 )(
