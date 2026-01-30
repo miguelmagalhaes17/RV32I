@@ -76,14 +76,22 @@ task comparison_dut_ref();
 endtask
 
 initial begin 
+
     i_alu_op = OP_ALU_ADD; i_a = 1; i_b = 1;
     #1
     comparison_dut_ref();
+
     i_alu_op = OP_ALU_AND; i_a = 1; i_b = 2; 
     #1
     comparison_dut_ref();
+
+    
+
 end
 
-
+initial begin
+  #1000 $display("Simulation finished.");
+    $finish;
+end
 
 endmodule
