@@ -22,6 +22,7 @@ module rv32 #(
     logic [ADDR_WIDTH-1: 0] i_rd_addr_2;  // Read Address 2
     logic [DATA_WIDTH-1: 0] o_rd_data_2;  // Read Data    2
 
+    logic [DATA_WIDTH-1: 0] instruction;
     logic           [ 6: 0] opcode;
     logic           [11: 7] rd;
     logic           [14:12] funct3;
@@ -71,17 +72,25 @@ module rv32 #(
     // ------------ /Register File --------------- 
 
     // --------------- Decoder ------------------- 
-
     decoder #(
         .WIDTH          ( DATA_WIDTH   )
     ) u_decoder (
-        .i_instruction  (              ),
+        .i_instruction  ( instruction  ),
         .o_opcode       ( opcode       ),
         .o_rd           ( rd           ),
         .o_funct3       ( funct3       ),
         .o_rs1          ( rs1          ),
         .o_immediate    ( immediate    )
     );
-
     // --------------- /Decoder ------------------
+
+    // ----------------- ROM --------------------- 
+    rom #(
+        .WIDTH          ( DATA_WIDTH   )
+    ) u_rom (
+        .addr           ( pc           ),
+        .instruction    ( instruction  )
+    );
+    // ---------------- /ROM --------------------- 
+
 endmodule

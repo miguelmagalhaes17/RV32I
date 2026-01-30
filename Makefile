@@ -1,5 +1,6 @@
 # Directories
 SRC_DIR  := src
+SW_DIR   := software
 TB_DIR   := tb
 OUT_DIR  := out
 VCD_FILE = $(OUT_DIR)/waveform.vcd
@@ -7,7 +8,7 @@ VCD_FILE = $(OUT_DIR)/waveform.vcd
 # Files
 # We find the top-level testbench specifically, and iverilog 
 # can often find the dependencies if they are in the include path.
-SRCS     := $(wildcard $(SRC_DIR)/*.sv) $(wildcard $(TB_DIR)/*.sv)
+SRCS     := $(wildcard $(SRC_DIR)/*.sv) $(wildcard $(TB_DIR)/*.sv) $(wildcard $(SW_DIR)/*.sv)
 TARGET   := $(OUT_DIR)/rv32_simulation.vvp
 
 # Compiler and Flags
