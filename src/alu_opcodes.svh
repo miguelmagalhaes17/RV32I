@@ -13,9 +13,9 @@ typedef enum logic [4:0] {
     OP_ALU_SRL  = 5'd9,  // 01001
     OP_ALU_SRA  = 5'd10, // 01010
     OP_ALU_EQ   = 5'd11, // 01011
-    OP_ALU_NEQ  = 5'd12, // 01100
-    OP_ALU_GT   = 5'd13, // 01101
-    OP_ALU_GTU  = 5'd14  // 01110
+    OP_ALU_NEQ  = 5'd12 // 01100
+    //OP_ALU_GT   = 5'd13, // 01101
+    //OP_ALU_GTU  = 5'd14  // 01110
 } alu_op_t;
 
 `endif

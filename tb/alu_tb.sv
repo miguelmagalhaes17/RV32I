@@ -75,6 +75,36 @@ task comparison_dut_ref();
 
 endtask
 
+logic [WIDTH-1:0] test_vectors [][2]; // 2 inputs: a and b, for each instruction (indexed by i_alu_op)
+initial begin
+
+    test_vectors = '{
+        '{32'h0000_0000, 32'h0000_0000},
+        '{32'hFFFF_FFFF, 32'h0000_0001},
+        '{32'h7FFF_FFFF, 32'h8000_0000},
+        '{32'h1234_5678, 32'h8765_4321}
+    };
+    
+    for (int op = 0; op < (1 << OP_WIDTH); op++) begin
+        i_alu_op = alu_op_t'(op);
+        foreach(test_vectors[i]) begin
+            i_a = test_vectors[i][0];
+            i_b = test_vectors[i][1];
+            #1
+            comparison_dut_ref();
+        end
+    end
+
+    repeat(100) begin
+        i_alu_op = alu_op_t'($urandom_range(0, 11));
+        i_a = $urandom;
+        i_b = $urandom;
+        #1
+        comparison_dut_ref();
+    end
+
+end
+
 initial begin 
 
     i_alu_op = OP_ALU_ADD; i_a = 1; i_b = 1;
@@ -85,9 +115,9 @@ initial begin
     #1
     comparison_dut_ref();
 
-    
-
 end
+
+
 
 initial begin
   #1000 $display("Simulation finished.");
